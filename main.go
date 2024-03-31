@@ -77,7 +77,6 @@ func main() {
 		if(hour.ChanceOfRain<40){
 			fmt.Print(message)
 		}else{
-			fmt.Print("test")
 			color.Red(message)
 		}
 	}
