@@ -43,7 +43,11 @@ func main() {
 		panic("Error loading .env file")
 	}
 	apiKey := os.Getenv("API_KEY")
-	res, err := http.Get("http://api.weatherapi.com/v1/forecast.json?key=" + apiKey + "&q=kaithal&days=1&aqi=no&alerts=no")
+	q:="delhi"
+	if(len(os.Args)>=2){
+		q=os.Args[1]
+	}
+	res, err := http.Get("http://api.weatherapi.com/v1/forecast.json?key=" + apiKey + "&q="+q+"&days=1&aqi=no&alerts=no")
 	if err != nil {
 		panic(err)
 	}
