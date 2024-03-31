@@ -43,7 +43,7 @@ func main() {
 		panic("Error loading .env file")
 	}
 	apiKey := os.Getenv("API_KEY")
-	q:="delhi"
+	q:="Delhi,India"
 	if(len(os.Args)>=2){
 		q=os.Args[1]
 	}
