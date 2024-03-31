@@ -65,6 +65,9 @@ func main() {
 
 	for _, hour := range hours {
 		var date = time.Unix(hour.TimeEpoch, 0)
+		if date.Before(time.Now()){
+			continue
+		}
 		fmt.Printf("%s - %.0fC, %.0f, %s\n", date.Format("15:05"), hour.TempC, hour.ChanceOfRain, hour.Condition.Text)
 	}
 }
